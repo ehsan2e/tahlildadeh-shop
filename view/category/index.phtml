@@ -1,0 +1,12 @@
+<h1>کاتالوگ</h1>
+<ul class="grid">
+<?php foreach($products as $product): ?>
+	<li class="grid-item">
+		<div class="grid-image"><img src="<?php echo (productImageUrl($product)); ?>" /></div>
+		<div class="grid-product-title"><?php echo ($product['name']); ?></div>
+		<div class="grid-product-price"><?php echo ($product['price']); ?><span class="price">ریال</span></div>
+		<div><button class="add-to-cart" onclick="location='<?php echo (addToCartUrl($product)); ?>'">افزودن به سبد</button></div>
+	</li>
+
+<?php endforeach; ?>
+</ul>

@@ -1,0 +1,52 @@
+/* main style sheet */
+html, body{
+	direction: rtl;
+	margin: 0px;
+	padding: 0px;
+}
+*{
+	font: 14px/24px Tahoma;
+}
+h1{
+	font-size: 36px;
+	line-height: 46px;
+}
+.container{
+	width: 980px;
+	margin: auto;
+}
+ul, ol, dl{
+	list-style: none;
+	padding:0px;
+}
+ul.grid>li{
+	float: right;
+	width: 235px;
+	margin: 10px 5px;
+	padding: 5px 5px 10px;
+	text-align: center;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+	border: solid 1px #CCC;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+.grid-image{
+	display:block;
+	width:200px;
+	height:250px;
+	border: solid 1px #DDD;
+	margin:auto;
+}
+.grid-product-title{
+	font-size: 110%;
+	font-weight: bold;
+
+}
+span.price{
+	vertical-align: middle;
+	font-size: 85%;
+	padding-right: 5px;
+}
