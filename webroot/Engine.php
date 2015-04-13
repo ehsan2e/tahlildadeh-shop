@@ -37,7 +37,10 @@ if(isset($dependencies)){
 	foreach ($dependencies as $dependency) {
 		$dependency = str_replace('/', DS, $dependency);
 		require_once("{$dependency}.php");
+
+
 		// If this dependency uses other functions, recursively load them
+
 		if(isset($uses)){
 			$temp=$uses;
 			unset($uses);
@@ -90,7 +93,7 @@ if($loadView){
 	}
 
 
-	// Including UI and URL helpers
+	// Including UI helper
 
 	require_once('ui.php');
 
