@@ -1,0 +1,37 @@
+<?php
+$cartCount = count($cartItems);
+?>
+<div class="btn-group btn-group-cart">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+        <span class="pull-right">
+            <i class="glyphicon glyphicon-shopping-cart"></i>
+        </span>
+        <span class="pull-right btn-cart-text">سبد خرید: <?php if($cartCount>0): echo($cartCount); ?> مورد<?php else: ?>خالیست<?php endif;?></span>
+        <span class="glyphicon glyphicon-triangle-bottom pull-left"></span>
+    </button>
+    
+    <ul class="dropdown-menu cart-content" role="menu">
+    	<?php
+    		$totalPrice=0;
+    		if($cartCount>0):
+    		foreach ($cartItems as $item):
+    			$totalPrice+=($item['count'] * $item['price']);
+    	?>
+        <li>
+            <a href="#">
+                <b><?php echo ($item['name']); ?></b>
+                <span><?php echo ($item['count']); ?> X&rlm; <?php echo ($item['price']); ?> ریال</span>
+            </a>
+        </li>
+    	<?php endforeach; ?>
+        <li class="divider"></li>
+    	<?php endif; ?>
+        <li>
+            <a href="#">
+                جمع:
+                <?php echo ($totalPrice); ?>
+                ریال
+            </a>
+        </li>
+    </ul>
+</div><!-- btn-group Cart Box -->

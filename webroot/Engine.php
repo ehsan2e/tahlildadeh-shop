@@ -5,7 +5,7 @@
 session_start();
 
 
-// Loading config and constant in order
+// Loading config and constant respectively
 
 $dir=dirname(dirname(__FILE__));
 require_once($dir.DIRECTORY_SEPARATOR.'config.php');
@@ -15,7 +15,7 @@ require_once($dir.DIRECTORY_SEPARATOR.'constants.php');
 // Setting include path for functions and libraries
 
 $defaultIncludePath=get_include_path();
-set_include_path(implode(PATH_SEPARATOR, array(
+set_include_path(implode(PS, array(
 		$defaultIncludePath,
 		FUNC_DIR,
 		LIB_DIR
@@ -23,9 +23,50 @@ set_include_path(implode(PATH_SEPARATOR, array(
 ));
 
 
-// Including common functions and libraries
+/**
+  * This function uses a global variable named $view to automatically load necessary functions and libraries for other functions or libraries
+  *
+  * @param string|array $name the function or library we need to load
+  * @return void
+ */
 
-require_once('url.php');
+function autoLoadingManager($name){
+	global $uses;
+
+
+	// If more than one file name is given then use autoLoadingManager function for each of them
+
+	if(is_array($name)){
+		foreach($name as $singleName){
+			autoLoadingManager($singleName);
+		} 
+		return;
+	}
+
+
+	// Requiring the desired function or library. Remember to add '.php' as the extension
+
+	$name=str_replace('\\', DS, $name).'.php';
+	require_once($name);
+
+
+	// Check whether the library has any dependency itself. Function and libraries dependencies are stored in a global variable named $uses in their corresponding file
+
+	if(isset($uses)){	
+		$tempUses=$uses;
+		unset($GLOBALS['uses']);
+		autoLoadingManager($tempUses);		
+	}
+
+	return;
+}
+
+
+
+
+// Loading common functions and libraries using our autoLoadingManager function
+
+autoLoadingManager(array('dbf', 'url'));
 
 
 /* 
@@ -34,28 +75,8 @@ require_once('url.php');
  */
 
 if(isset($dependencies)){
-	foreach ($dependencies as $dependency) {
-		$dependency = str_replace('/', DS, $dependency);
-		require_once("{$dependency}.php");
-
-
-		// If this dependency uses other functions, recursively load them
-
-		if(isset($uses)){
-			$temp=$uses;
-			unset($uses);
-			while(count($temp) > 0){
-				$requirement=str_replace('/', DS, array_shift($temp));
-				require_once("{$requirement}.php");
-				if(isset($uses)){
-					$temp=array_merge($temp, $uses);
-					unset($uses);
-					$temp=array_unique($temp);
-				}
-			}
-			
-		}
-	}
+	autoLoadingManager($dependencies);
+	unset($dependencies);
 }
 
 
@@ -75,7 +96,9 @@ if(!is_null($response)){
 		$loadView=false;
 		
 
-		//@TODO implement redirect logic
+		//redirect logic
+
+		header(sprintf('location: %s', $response['redirect']));
 	}
 }
 
@@ -93,9 +116,9 @@ if($loadView){
 	}
 
 
-	// Including UI helper
+	// Including UI helper using our autoLoadingManager
 
-	require_once('ui.php');
+	autoLoadingManager('ui');
 
 
 	// Buffering the view
@@ -108,9 +131,11 @@ if($loadView){
 
 	// Including master view
 
-	$masterView=implode(DS,array(VIEW_DIR,'masters','1-column.phtml'));
+	$masterView=implode(DS,array(VIEW_DIR,'masters','2-column-right.phtml'));
 	require($masterView);
 }
 
 
 // Releasing resources and cleaning up
+
+dbClose(); // To close DB connection if presents
