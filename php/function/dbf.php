@@ -27,14 +27,13 @@ function dbConnect (){
 /**
  * 
  * @param type $sql
- * @todo باید تغییر داده شود
  * 
  */
 function dbQuery ($sql){
     $link = dbConnect();
     $result = mysql_query($sql);
-    
-    if(!is_resource($result)){
+    $isASelectQuery=stripos($sql, 'select');
+    if(!is_resource($result) && $isASelectQuery!==false){
         //print_r(mysql_error());
         die('جوابی از دیتابیس نیامد !');
     }

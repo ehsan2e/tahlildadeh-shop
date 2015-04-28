@@ -5,6 +5,11 @@ function addToCartUrl($product){
 	return BASE_URL.sprintf('cart/add.php?c=%d&p=%d', $category, $product['id']);
 }
 
+function removeFromCart ($product){
+    
+    return BASE_URL.sprintf('cart/delete.php?p=%d', $product['id']);
+}
+
 function categoryUrl($categoryId){
 	return BASE_URL.sprintf('category?cat=%d', $categoryId);
 }

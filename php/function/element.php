@@ -11,7 +11,8 @@ function elementCart($data=array()){
         	$cartItems[]=array(
         			'name'  => $row['name'],
         			'price' => (int) $row['price'],
-        			'count' => $_SESSION['cart'][(int) $row['id']]
+        			'count' => $_SESSION['cart'][(int) $row['id']],
+                                'id' => $row['id']
         		);
         }        
         mysql_free_result($result);

@@ -20,8 +20,11 @@ $cartCount = count($cartItems);
         <li>
             <a href="#">
                 <b><?php echo ($item['name']); ?></b>
-                <span><?php echo ($item['count']); ?> X&rlm; <?php echo ($item['price']); ?> ریال</span>
+                <span><?php echo ($item['count']); ?> X&rlm; <?php echo ($item['price']); ?> ریال
+                    <i class="glyphicon glyphicon-remove pull-left cart-item-remove" onclick="(function(){location='<?php echo (removeFromCart($item)); ?>';})()"></i>
+                </span>
             </a>
+            
         </li>
     	<?php endforeach; ?>
         <li class="divider"></li>
