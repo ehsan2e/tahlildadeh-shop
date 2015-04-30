@@ -1,1 +1,91 @@
-<h1>صفحه سبد<h1>
+                <!-- Cart Page -->
+<!-- Body -->
+
+    <div class="row">
+        <!-- Sidebar -->
+        <div class="col-lg-3 col-md-3 col-sm-12">
+            <!-- Best Product-->
+            <div class="col-lg-12 col-md-12 col-sm-12 visible-lg visible-md">
+                <div class="no-padding">
+                    <span class="title">
+                        پرفروش ترین محصولات
+                    </span>
+                </div>
+                <div class="thumbnail col-lg-12 col-md-12 col-sm-6 text-center">
+                    <a href="detail.html" style="overflow: hidden; position: relative;">
+                        <img src="media/product/product-1.jpg" style="width: 250px; height: auto;">
+                    </a>
+                    <div class="caption prod-caption">
+                        <h4>
+                            <a href="detail.html">
+                                 یک محصول خوبــــ...
+                            </a>
+                        </h4>
+                        <p>
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و
+                        </p>
+                        <p></p>
+                        
+                        <div class="btn-group">
+                            <a href="#" class="btn btn-default">$ 528.96</a>
+                            <a href="#" class="btn btn-primary">
+                                <span class="glyphicon glyphicon-shopping-cart"></span>
+                                خرید
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="thumbnail col-lg-12 col-md-12 col-sm-6 hidden-xs text-center">
+                    <a href="detail.html" style="overflow: hidden">
+                        <img src="media/product/product-8.jpg" style="width: 280px; height: auto; ">
+                    </a>
+                    <div class="caption prod-caption">
+                        <h4>
+                            <a href="detail.html">محصول پرطرفدار ...</a>
+                        </h4>
+                        <p>
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و
+                        </p>
+                        <div class="btn-group">
+                            <a href="#" class="btn btn-default">$ 528.96</a>
+                            <a href="#" class="btn btn-primary">
+                                <span class="glyphicon glyphicon-shopping-cart"></span>
+                                خرید
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Best Product-->
+            
+        </div> <!-- End col-lg-3 col-md-3 col-sm-12 -->
+    <div class="clearfix visible-sm"></div>
+        <!-- End Sidebar -->
+        
+        <!--cart table-->
+        <div class="col-lg-9 col-md-9 col-sm-12">
+            <div class="col-lg-12 col-sm-12">
+                <span class="title">
+                    سبد خرید
+                </span>
+            </div>
+            <div class="col-lg-12 col-sm-12 hero-feature">
+                
+                <?php echo (loadElement('shoppingcart')); ?>
+                
+                        <div class="btn-group btns-cart pull-left">
+                                <button type="button" class="btn btn-primary" onclick="window.location='<?php echo BASE_URL.'/category'; ?>'"><i class="glyphicon glyphicon-circle-arrow-right"></i> بازگشت به فروشگاه</button>
+                                <button type="button" class="btn btn-primary">برورزرسانی سبد خرید</button>
+                                <button type="button" class="btn btn-primary" onclick="window.location='checkout.html'">تسویه حساب <i class="glyphicon glyphicon-circle-arrow-left"></i></button>
+                        </div>
+            </div>
+
+
+        </div> <!--End cart table-->
+        
+    
+    </div>
+
+    
+
+<!-- End Body -->

@@ -1,6 +1,4 @@
-
-<div class="container main-container">
-    <!-- Body -->
+<!-- Body -->
     <div class="row">
         <!-- Sidebar -->
         <div class="col-lg-3 col-md-3 col-sm-12">
@@ -20,7 +18,7 @@
         <div class="col-lg-9 col-md-9 col-sm-12">
             <div class="col-lg-12 col-sm-12">
                 <span class="title">
-                    یک تی شرت خوووبـــ ...
+                    <?php echo $item['name']; ?>
                 </span>
             </div>
             
@@ -73,7 +71,8 @@
                                 <div class="the-list">
                                     
                                     <div class="col-xs-12 text-center title">
-                                       5400 تومان
+                                      <?php echo $item['price']; ?>
+                                        ريال
                                     </div>
                                     
                                 </div>
@@ -82,7 +81,8 @@
                                         موجودی انبار
                                     </div>
                                     <div class="col-xs-8">
-                                        53 عدد
+                                        <?php echo $item['stock']; ?>
+                                        عدد
                                     </div>
                                 </div>
                                 <div class="the-list">
@@ -148,7 +148,7 @@
                                             <!-- <button class="btn btn-default bootstrap-touchspin-up" type="button">+</button> -->
                                         </span>
                                     
-                                        <button class="btn btn-default pull-right" style="margin-right: 5px; ">
+                                        <button class="btn btn-default pull-right" style="margin-right: 5px; " onclick="(function(){location='<?php echo (addToCartSingleproduct($item['id'])); ?>';})()">
                                             <span class="glyphicon glyphicon-shopping-cart"></span> اضافه به سبد خرید
                                         </button>
                                     </div>
@@ -176,8 +176,7 @@
                             <div class="tab-pane active" id="desc">
                                     <div class="well">
                                         <p>
-لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
-
+                                            <?php echo $item['desc']; ?>
                                         </p>
                                     </div>
                             </div>
@@ -273,4 +272,4 @@
     
 
     <!-- End Body -->
-</div> <!-- Container -->
+

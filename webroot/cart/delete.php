@@ -15,7 +15,7 @@ function main (){
         
      //  ارسال به صفحه سبد خرید
         
-            $url = BASE_URL.'/cart';
+        $url = BASE_URL.'/cart';
         return array('redirect' => $url);
     
     

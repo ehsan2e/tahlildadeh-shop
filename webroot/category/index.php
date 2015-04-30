@@ -1,5 +1,5 @@
 <?php
-
+        // Category Page
 /*
  * Sample Dependency decleration
  *
@@ -15,7 +15,6 @@
  */
 function main ()
     {
-        //echo 'catalog Page';
         
         // @TODO Read Product From db
         

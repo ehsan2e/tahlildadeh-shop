@@ -1,3 +1,5 @@
+<!-- Category Page -->
+
 <div class="row">
 	<!-- Right Menu -->
     <div class="col-lg-3 col-md-3 col-sm-12">
@@ -16,12 +18,12 @@
         <!-- Product item -->
         <div class="col-lg-4 col-sm-4 hero-feature text-center">
             <div class="thumbnail">
-                <a href="#" >
+                <a href="<?php echo productUrl($product['id']); ?>" >
                     <img src="#" >
                 </a>
                 <div class="caption prod-caption">
                     <h4>
-                        <a href="#"><?php echo ($product['name']); ?></a>
+                        <a href="<?php echo productUrl($product['id']); ?>"><?php echo ($product['name']); ?></a>
                     </h4>
                     <p>
                         <?php echo ($product['desc']); ?>
