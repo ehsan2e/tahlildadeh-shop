@@ -95,7 +95,17 @@
 
 
 		<!-- container -->
-		<div class="container main-container"><?php echo($content); ?></div>
+                <!-- 94-02-14 tahlildade -->
+                
+		<div class="container main-container">
+                    <?php 
+                        // show message
+                        echo (loadElement('message'));
+                        
+                        echo($content); 
+                        
+                    ?>
+                </div>
 		<!-- End container -->
 
 

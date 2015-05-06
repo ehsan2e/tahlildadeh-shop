@@ -45,3 +45,9 @@ function elementShoppingcart($data=array()){
        
 	return array('cartItems' => $cartItems);
 }
+
+function elementMessage ($data=array()) {
+    
+    $result = array ('messages' => readMessage());
+    return $result;
+}

@@ -44,6 +44,7 @@
             }else {
                 $_SESSION['cart'][$productId] = $count;
                 // @ToDo ایجاد پیغام درست
+                addMessage('محصول به درستی به سبد وارد شد', SUCSESS);
             }
 
             $url = categoryUrl($categoryId);

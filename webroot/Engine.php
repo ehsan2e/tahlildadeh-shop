@@ -66,7 +66,7 @@ function autoLoadingManager($name){
 
 // Loading common functions and libraries using our autoLoadingManager function
 
-autoLoadingManager(array('dbf', 'url'));
+autoLoadingManager(array('dbf', 'url', 'message'));
 
 
 /* 
@@ -139,3 +139,4 @@ if($loadView){
 // Releasing resources and cleaning up
 
 dbClose(); // To close DB connection if presents
+writeMessagesToSession (); // add message to sessions for show in page after reload or header locaton
