@@ -1,0 +1,40 @@
+
+<div class="row">
+	<!-- Right Menu -->
+    <div class="col-lg-3 col-md-3 col-sm-12">
+    </div>
+    <div class="clearfix visible-sm"></div>
+
+    <!-- Products -->
+    <div class="col-lg-9 col-md-9 col-sm-12">
+
+        <div class="col-lg-12 col-sm-12">
+            <span class="title">لیست محصولات</span>
+        </div>
+        <!-- Products Box -->
+        <table id="t01" border="10" style="width:100%">
+  <tr>
+    <th>ID</th>
+    <th>نام</th>		
+    <th>دسته بندی</th>
+    <th>موجودی</th>
+    <th>قیمت (ریال)</th>
+  </tr>
+  	
+		<?php foreach($products as $product): ?>
+        <!-- Product item -->
+        <tr>
+    <td><?php echo ($product['id']); ?></td>
+    <td><a href="<?php echo(sprintf('/admin/product/edit.php?p=%d&c=%d',$product['id'],$category));?>"><?php echo ($product['name']); ?></a></td><!-- لینک اشتباه است خانوم ؟ باید اول انجام بده که من لینک رو با کار ایشون هماهنگ کنم -->
+    <td><?php echo ($product['cname']); ?></td>		
+    <td><?php echo ($product['stock']); ?></td>		
+    <td><?php echo ($product['price']); ?></td>
+  </tr>
+                        
+		   
+         <!-- End Product 1 -->
+        <?php endforeach; ?>
+		</table>
+    </div>
+	
+</div>

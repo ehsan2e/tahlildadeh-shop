@@ -1,0 +1,42 @@
+
+<div class="row">
+	<!-- Right Menu -->
+    <div class="col-lg-3 col-md-3 col-sm-12">
+    </div>
+    <div class="clearfix visible-sm"></div>
+
+    <!-- Customers -->
+    <div class="col-lg-9 col-md-9 col-sm-12">
+
+        <div class="col-lg-12 col-sm-12">
+            <span class="title">لیست مشتریان</span>
+        </div>
+        <!-- Customers Box -->
+        <table id="t01" border="10" style="width:100%">
+  <tr>
+    <th>ID</th>
+    <th>نام</th>		
+    <th>نام خانوادگی</th>
+    <th>رمز عبور</th>
+    <th>آدرس</th>
+    <th>تاریخ</th>
+  </tr>
+  	
+		<?php foreach($customers as $customer): ?>
+        <!-- customer item -->
+        <tr>
+    <td><a href="<?php echo(sprintf('/admin/customer/edit.php?p=%d',$customer['id']));?>"><?php echo ($customer['id']); ?></a></td> <!-- قسمت فرستادن آیدی به صفحه مورد نظز -->
+    <td><?php echo ($customer['first_name']); ?></td>
+    <td><?php echo ($customer['last_name']); ?></td>
+    <td><?php echo ($customer['password']); ?></td>		
+    <td><?php echo ($customer['address']); ?></td>		
+    <td><?php echo ($customer['date']); ?></td>		
+  </tr>
+                        
+		   
+         <!-- End Customer 1 -->
+        <?php endforeach; ?>
+		</table>
+    </div>
+	
+</div>
