@@ -36,6 +36,9 @@ function dbQuery ($sql){
     if(!is_resource($result) && $isASelectQuery!==false){
         //print_r(mysql_error());
         die('جوابی از دیتابیس نیامد !');
+    }elseif ($isASelectQuery===false && !$result) {
+        print_r(mysql_error());
+        die('خطا در اجرای کوئری !');
     }
     
     return $result;

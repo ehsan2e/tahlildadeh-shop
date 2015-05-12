@@ -1,9 +1,12 @@
 <?php
+
+global $dependencies;
+$dependencies=array('crud');
+
 function main ()
-    {
+{  
         
-        
-    }
+}
 
     
     
