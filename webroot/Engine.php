@@ -79,6 +79,12 @@ if(isset($dependencies)){
 	unset($dependencies);
 }
 
+if (isset($acl)) {
+    autoLoadingManager('authHelper');
+    if (!hasPrivilege ($acl)) {
+        die ('Access Denied');
+    }
+}
 
 // Calling main function and processing the response
 
@@ -128,7 +134,7 @@ if($loadView){
 	$content=ob_get_contents();
 	ob_end_clean();
 
-
+        //@TODo : براساس آدرس صفحه نمایش را انجام میدهیم - Admin Master Or Front Master
 	// Including master view
 
 	$masterView=implode(DS,array(VIEW_DIR,'masters','2-column-right.phtml'));

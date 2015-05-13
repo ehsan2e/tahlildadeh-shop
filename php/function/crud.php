@@ -64,7 +64,8 @@ function listRecords($tableName, $condition=null, $order=null, $page=null, $foru
 
 
 	$sql=sprintf($query, $tableName, $condition);
-
+        //die($sql);
+        
 	$resultSet=dbQuery($sql);
 	if($resultSet===false){
 		return false;
