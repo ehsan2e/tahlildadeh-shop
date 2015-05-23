@@ -15,13 +15,13 @@ $cartCount = count($cartItems);
     		$totalPrice=0;
     		if($cartCount>0):
     		foreach ($cartItems as $item):
-    			$totalPrice+=($item['count'] * $item['price']);
+    			$totalPrice+=($item['count'] * $item['product_price']);
     	?>
         <li>
             
                 <a href="#">
-                    <b><?php echo ($item['name']); ?></b>
-                    <span><?php echo ($item['count']); ?> X&rlm; <?php echo ($item['price']); ?> ریال
+                    <b><?php echo ($item['product_name']); ?></b>
+                    <span><?php echo ($item['count']); ?> X&rlm; <?php echo ($item['product_price']); ?> ریال
                         <i class=" glyphicon glyphicon-trash pull-left cart-item-remove" onclick="(function(){location='<?php echo (removeFromCart($item)); ?>';})()"></i>
                         <i ></i>
                     </span>

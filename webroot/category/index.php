@@ -27,11 +27,11 @@ function main ()
         $sql ="SELECT * FROM `products` LIMIT 10;";
         $result = dbQuery($sql);
         
-        while (($record = mysql_fetch_assoc($result)) !== false ){            
-            $resp['data']['products'][] = array('name'  => $record['product_name'],
-                                                'price' => $record['product_price'],
+        while (($record = mysql_fetch_assoc($result)) !== false ){
+            $resp['data']['products'][] = array('product_name'  => $record['product_name'],
+                                                'product_price' => $record['product_price'],
                                                 'id'    => $record['id'],
-                                                'desc'    => $record['product_description']
+                                                'product_description'    => $record['product_description']
                                                );            
         }
         

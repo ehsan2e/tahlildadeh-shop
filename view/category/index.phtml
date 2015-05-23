@@ -23,13 +23,13 @@
                 </a>
                 <div class="caption prod-caption">
                     <h4>
-                        <a href="<?php echo productUrl($product['id']); ?>"><?php echo ($product['name']); ?></a>
+                        <a href="<?php echo productUrl($product['id']); ?>"><?php echo ($product['product_name']); ?></a>
                     </h4>
                     <p>
-                        <?php echo ($product['desc']); ?>
+                        <?php echo ($product['product_description']); ?>
                     </p>
                         <div class="btn-group btn-group-justified">
-                            <a href="#" class="btn btn-default"><?php echo ($product['price']); ?>&nbsp;ریال</a>
+                            <a href="#" class="btn btn-default"><?php echo ($product['product_price']); ?>&nbsp;ریال</a>
                             <a href="Javascript: (function(){location='<?php echo (addToCartUrl($product)); ?>';})()" class="btn btn-primary">
                                 <span class="glyphicon glyphicon-shopping-cart"></span>
                             خرید

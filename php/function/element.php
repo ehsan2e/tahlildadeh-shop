@@ -9,8 +9,8 @@ function elementCart($data=array()){
 		$result = dbQuery($sql);
         while(($row = mysql_fetch_assoc($result))!==false){
         	$cartItems[]=array(
-        			'name'  => $row['product_name'],
-        			'price' => (int) $row['product_price'],
+        			'product_name'  => $row['product_name'],
+        			'product_price' => (int) $row['product_price'],
         			'count' => $_SESSION['cart'][(int) $row['id']],
                                 'id' => $row['id']
         		);
@@ -32,8 +32,8 @@ function elementShoppingcart($data=array()){
 		$result = dbQuery($sql);
         while(($row = mysql_fetch_assoc($result))!==false){
         	$cartItems[]=array(
-        			'name'  => $row['product_name'],
-        			'price' => (int) $row['product_price'],
+        			'product_name'  => $row['product_name'],
+        			'product_price' => (int) $row['product_price'],
         			'count' => $_SESSION['cart'][(int) $row['id']],
                                 'id' => $row['id']
         		);
