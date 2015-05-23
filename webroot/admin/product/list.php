@@ -13,13 +13,13 @@ function main ()
         $result = dbQuery($sql);
         
         while (($record = mysql_fetch_assoc($result)) !== false ){            
-            $resp['data']['products'][] = array('name'  => $record['name'],
-                                                'price' => $record['price'],
+            $resp['data']['products'][] = array('name'  => $record['product_name'],
+                                                'price' => $record['product_price'],
                                                 'id'    => $record['id'],
-                                                'desc'    => $record['desc'],
+                                                'desc'    => $record['product_description'],
 												'category_id'    => $record['category_id'],
 												'cname'    => $record['cname'],
-												'stock'    => $record['stock']
+												'stock'    => $record['product_stock']
                                                );            
         }
         

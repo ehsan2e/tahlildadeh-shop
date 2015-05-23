@@ -1,0 +1,61 @@
+<form action="" method="post" enctype="multipart/form-data">
+    <div>
+        <?php $categoryID=isset($productData['category_id'])?$productData['category_id']:'' ?>
+        <label for="product_category">دسته محصول</label>
+        <select id="product_category" name="product_category">
+            <option value="">لطفا دسته محصول را انتخاب نمایید</option>
+            <?php foreach($categories as $id => $name): ?>
+                <option value="<?php echo($id); ?>"<?php if($categoryID==$id): ?> selected="selected"<?php endif; ?>><?php echo($name); ?></option>
+            <?php endforeach; ?>
+        </select>
+    </div>
+    <div>
+        <label for="product_name">نام کالا</label>
+        <input type="text" id="product_name" name="product_name"
+               value="<?php echo htmlentities(isset($productData['product_name'])?$productData['product_name']:'', ENT_QUOTES, 'UTF-8') ?>" />
+    </div>
+    <div>
+        <label for="product_price">قیمت</label>
+        <input type="text" id="product_price" name="product_price"
+               value="<?php echo htmlentities(isset($productData['product_price'])?$productData['product_price']:'', ENT_QUOTES, 'UTF-8') ?>" />
+    </div>
+    <div>
+        <label for="product_weight">وزن</label>
+        <input type="text" id="product_weight" name="product_weight"
+               value="<?php echo htmlentities(isset($productData['weight'])?$productData['weight']:'', ENT_QUOTES, 'UTF-8') ?>" />
+    </div>
+    <div>
+        <label for="product_stock">موجودی</label>
+        <input type="text" id="product_stock" name="product_stock"
+               value="<?php echo htmlentities(isset($productData['product_stock'])?$productData['product_stock']:'', ENT_QUOTES, 'UTF-8') ?>" />
+    </div>
+    <div>
+        <?php $os=isset($productData['os'])?$productData['os']:'' ?>
+        <label for="product_os">سیستم عامل</label>
+        <select id="product_os" name="product_os">
+            <option value="">لطفا سیستم عامل را انتخاب نمایید</option>
+            <?php foreach($oses as $id => $name): ?>
+                <option value="<?php echo($id); ?>"<?php if($os==$id): ?> selected="selected"<?php endif; ?>><?php echo($name); ?></option>
+            <?php endforeach; ?>
+        </select>
+    </div>
+    <div>
+        <?php $os=isset($productData['made_in'])?$productData['made_in']:'' ?>
+        <label for="product_made_in">کشور سازنده</label>
+        <select id="product_made_in" name="product_made_in">
+            <option value="">لطفا کشور سازنده را انتخاب نمایید</option>
+            <?php foreach($countries as $id => $name): ?>
+                <option value="<?php echo($id); ?>"<?php if($os==$id): ?> selected="selected"<?php endif; ?>><?php echo($name); ?></option>
+            <?php endforeach; ?>
+        </select>
+    </div>
+    <div>
+        <label for="product_description">توضیحات</label>
+        <textarea id="product_description" name="product_description"><?php echo htmlentities(isset($productData['product_description'])?$productData['product_description']:'', ENT_QUOTES, 'UTF-8') ?></textarea>
+    </div>
+    <div>
+        <label for="picture">تصویر</label>
+        <input type="file" id="picture" name="picture" /><br />
+    </div>
+    <button type="submit" name="submit" value="submit">ثبت</button>
+</form>

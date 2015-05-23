@@ -134,10 +134,17 @@ if($loadView){
 	$content=ob_get_contents();
 	ob_end_clean();
 
-        //@TODo : براساس آدرس صفحه نمایش را انجام میدهیم - Admin Master Or Front Master
+
 	// Including master view
 
-	$masterView=implode(DS,array(VIEW_DIR,'masters','2-column-right.phtml'));
+    if(!isset($masterName)) {
+        if(preg_match('$/admin/$',$_SERVER['SCRIPT_NAME'])){
+            $masterName = 'admin.phtml';
+        }else {
+            $masterName = '2-column-right.phtml';
+        }
+    }
+    $masterView = implode(DS, array(VIEW_DIR, 'masters', $masterName));
 	require($masterView);
 }
 
@@ -145,4 +152,4 @@ if($loadView){
 // Releasing resources and cleaning up
 
 dbClose(); // To close DB connection if presents
-writeMessagesToSession (); // add message to sessions for show in page after reload or header locaton
+writeMessagesToSession (); // Storing generated messages to session so they can be retrieved later

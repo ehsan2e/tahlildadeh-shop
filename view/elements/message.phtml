@@ -1,6 +1,12 @@
-<?php
-
-print_r($messages);
+<?php if(count($messages)>0): ?>
+    <?php foreach($messages as $type=>$messageColection): ?>
+        <div class="message-<?php echo($type); ?>">
+        <?php foreach($messageColection as $message): ?>
+            <div><?php echo($message); ?></div>
+        <?php endforeach; ?>
+        </div>
+    <?php endforeach; ?>
+<?php endif; ?>
 
 
 

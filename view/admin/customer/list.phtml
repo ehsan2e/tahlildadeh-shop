@@ -17,9 +17,8 @@
     <th>ID</th>
     <th>نام</th>		
     <th>نام خانوادگی</th>
-    <th>رمز عبور</th>
+    <th>پست الکترونیک</th>
     <th>آدرس</th>
-    <th>تاریخ</th>
   </tr>
   	
 		<?php foreach($customers as $customer): ?>
@@ -28,9 +27,8 @@
     <td><a href="<?php echo(sprintf('/admin/customer/edit.php?p=%d',$customer['id']));?>"><?php echo ($customer['id']); ?></a></td> <!-- قسمت فرستادن آیدی به صفحه مورد نظز -->
     <td><?php echo ($customer['first_name']); ?></td>
     <td><?php echo ($customer['last_name']); ?></td>
-    <td><?php echo ($customer['password']); ?></td>		
-    <td><?php echo ($customer['address']); ?></td>		
-    <td><?php echo ($customer['date']); ?></td>		
+    <td><?php echo ($customer['email']); ?></td>
+    <td><?php echo ($customer['address']); ?></td>
   </tr>
                         
 		   

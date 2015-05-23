@@ -37,6 +37,7 @@ function dbQuery ($sql){
         //print_r(mysql_error());
         die('جوابی از دیتابیس نیامد !');
     }elseif ($isASelectQuery===false && !$result) {
+        echo ("{$sql}< br/>");
         print_r(mysql_error());
         die('خطا در اجرای کوئری !');
     }
