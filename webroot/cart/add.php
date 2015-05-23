@@ -38,7 +38,7 @@
 
             /////
 
-            if($count > ((int) $product['stock'])){
+            if($count > ((int) $product['product_stock'])){
 
                 // @TODo نمایش پیغام خطا
             }else {

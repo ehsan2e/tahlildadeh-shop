@@ -21,11 +21,11 @@ function main (){
     $result = dbQuery($sql);
 
     while (($record = mysql_fetch_assoc($result)) !== false ){            
-        $resp['data']['item'] = array('name'  => $record['name'],
-                                            'price' => $record['price'],
-                                            'stock'    => $record['stock'],
+        $resp['data']['item'] = array('product_name'  => $record['product_name'],
+                                            'product_price' => $record['product_price'],
+                                            'product_stock'    => $record['product_stock'],
                                             'id'    => $record['id'],
-                                            'desc'    => $record['desc']
+                                            'product_description'    => $record['product_description']
                                            );            
     }
 

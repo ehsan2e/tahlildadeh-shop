@@ -48,7 +48,7 @@ function main()
       }
       $subtotal =0 ;
       foreach ($products as $product) {
-          $stock = (int) $product['stock'];
+          $stock = (int) $product['product_stock'];
           $id = $product['id'];
           if ($stock < $_SESSION['cart'][$id]) {
               //@ToDo نمایش پیغام خطا مقدار موجودی کمتر هست - ارسال به سبد خرید
@@ -56,7 +56,7 @@ function main()
               
               return;
           }
-          $subtotal += (((int) $product['price']) * ((int) $_SESSION['cart'][$id]));
+          $subtotal += (((int) $product['product_price']) * ((int) $_SESSION['cart'][$id]));
       }
       
       
@@ -66,11 +66,11 @@ function main()
       $address = 'Noaddress'; //read from Form
       
       $order = array (
-          'u_id' => $userId,
-          'o_date' => date('Y-m-d H:i:s'),
-          'o_subtotal' => $subtotal,
-          'o_discount' => $discount,
-          'o_address' => $address
+          'customer_id' => $userId,
+          'order_date' => date('Y-m-d H:i:s'),
+          'order_subtotal' => $subtotal,
+          'order_discount' => $discount,
+          'order_address' => $address
           
       );
       

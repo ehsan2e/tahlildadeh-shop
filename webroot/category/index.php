@@ -28,10 +28,10 @@ function main ()
         $result = dbQuery($sql);
         
         while (($record = mysql_fetch_assoc($result)) !== false ){            
-            $resp['data']['products'][] = array('name'  => $record['name'],
-                                                'price' => $record['price'],
+            $resp['data']['products'][] = array('product_name'  => $record['product_name'],
+                                                'product_price' => $record['product_price'],
                                                 'id'    => $record['id'],
-                                                'desc'    => $record['desc']
+                                                'product_description'    => $record['product_description']
                                                );            
         }
         
