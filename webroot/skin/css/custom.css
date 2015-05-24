@@ -84,6 +84,7 @@ p {margin: 0 0 10px 0;}
 
 .thumbnail {border-radius: 0; padding: 4px;}
 .thumbnail:hover {border: 1px solid gray; }
+.thumbnail a img {height: 210px; }
 
 .prod-caption {background: #fbfbfb; border-top: 1px solid #ddd; }
 .prod-caption p {max-height: 60px !important; overflow: hidden;}
@@ -202,3 +203,49 @@ footer .copyright {padding: 10px; color: #ccc;}
   border-top-left-radius: 0; }
 .pagination>li:last-child>a, .pagination>li:last-child>span {border-bottom-left-radius: 0;  border-top-left-radius: 0;  border-bottom-right-radius: 0;
   border-top-right-radius: 0;}
+
+
+/* checkout Page */
+
+
+.tbl-checkout tbody tr td:nth-child(odd){ background: #f8f8f8; }
+
+
+/* Login / Register Page */
+
+.login-input {}
+
+.login-form { max-width: 380px; margin-top: 10px }
+.login-form .panel{ border: 1px solid #ddd; background-color: #fff; }
+.input-group .form-control:last-child {   border-radius: 0;  box-shadow: none;  webkit-box-shadow: none;}
+.input-group-addon:first-child { border-left: 0; border-right: 1px solid #ccc; border-radius: 0; }
+
+
+
+/* Admin Page */
+
+
+.admin-top-navbar ul li a i {font-size: 20px; color: #337ab7; position: relative;}
+.admin-top-navbar ul li a span {position: absolute; top: 0; left: 0; background-color: #1caf9a;}
+.admin-top-navbar ul li a {padding-top: 0; padding-bottom: 0;}
+
+
+/* Admin Index */
+
+.td-count { white-space: normal !important; width: 30px; }
+
+.icon-product-add {background: url(../images/admin/product_add.png) no-repeat right; padding-right: 40px; padding-bottom: 10px; }
+
+/* Admin Ploduct List Page*/
+.icon-product-list {background: url(../images/admin/ploduct_list.png) no-repeat top right; padding-right: 40px;}
+.tbl-product-list-name {width: 300px !important}
+
+
+
+/* Admin Costomer List */
+
+.icon-customer-list {background: url(../images/admin/customers.png) no-repeat top right; padding-right: 40px; padding-top: 8px;}
+
+
+
+

@@ -45,7 +45,7 @@ function main()
       foreach ($products as $product) {
           $stock = (int) $product['product_stock'];
           $id = $product['id'];
-          if ($product['is_saleable']=='0' || $stock < $_SESSION['cart'][$id]) {
+          if ($product['product_is_saleable']=='0' || $stock < $_SESSION['cart'][$id]) {
               //@ToDo نمایش پیغام خطا مقدار موجودی کمتر هست - ارسال به سبد خرید
               //@ToDo Advance : تمام آیتم ها بررسی شود بعد ارسال شود
 
@@ -61,7 +61,7 @@ function main()
           );
           $productUpdateData[$id]=array(
               'product_stock' => array(CRUD_MODIFY => (-$_SESSION['cart'][$id])),
-              'number_sold' => array(CRUD_MODIFY => $_SESSION['cart'][$id]),
+              'product_number_sold' => array(CRUD_MODIFY => $_SESSION['cart'][$id]),
           );
 
           $newStockValue=$stock - $_SESSION['cart'][$id];
@@ -111,7 +111,7 @@ function main()
          $stockData[$key]['stock_detail'].=" {$orderId}";
      }
 
-    if(!massUpdate('products',array('product_stock', 'number_sold'), $productUpdateData)){
+    if(!massUpdate('products',array('product_stock', 'product_number_sold'), $productUpdateData)){
         // نمایش پیغام خطا - سفارش ثبت نشد
 
         dbQuery('ROLLBACK');

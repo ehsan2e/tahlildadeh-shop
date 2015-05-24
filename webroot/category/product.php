@@ -21,12 +21,20 @@ function main (){
     $result = dbQuery($sql);
 
     while (($record = mysql_fetch_assoc($result)) !== false ){            
-        $resp['data']['item'] = array('product_name'  => $record['product_name'],
-                                            'product_price' => $record['product_price'],
-                                            'product_stock'    => $record['product_stock'],
-                                            'id'    => $record['id'],
-                                            'product_description'    => $record['product_description']
-                                           );            
+        $resp['data']['item'] = array(
+                                        'id'    => $record['id'],
+                                        'product_name'  => $record['product_name'],
+                                        'product_price' => $record['product_price'],
+                                        'product_stock'    => $record['product_stock'],
+                                        'product_brand'    => $record['product_brand'],
+                                        'product_color'    => $record['product_color'],
+                                        'product_gender'    => $record['product_gender'],
+                                        'product_cloth_type'    => $record['product_cloth_type'],
+                                        'product_made_in'    => $record['product_made_in'],
+                                        'product_visit_count'    => $record['product_visit_count'],
+                                        'product_picture_name'    => $record['product_picture_name'],
+                                        'product_description'    => $record['product_description']
+                                       );            
     }
 
     mysql_free_result($result);

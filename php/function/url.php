@@ -24,5 +24,5 @@ function productUrl($productId){
 }
 
 function productImageUrl($product){
-	return MEDIA_URL.'images/products/'.$product['image'];
+	return MEDIA_URL.'images/products/'.$product['product_picture_name'];
 }

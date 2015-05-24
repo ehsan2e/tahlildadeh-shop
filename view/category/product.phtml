@@ -30,14 +30,14 @@
                         <div class="product-main-image-container">
                             <img src="assets/images/loader.gif" class="product-loader" style="display: none;">
                             <span class="thumbnail product-main-image" style="position: relative; overflow: hidden;">
-                                <img src="media/product/details/detail1.jpg" >
+                                <img src="<?php echo (productImageUrl($item)); ?>" >
                             </span>
                         </div>
                         <!--End Main Image-->
                         <!-- Thumbnail Image -->
                         <div class="col-xs-3 product-thumb-image">
                             <a href="media/product/details/detail1.jpg" class="thumbnail">
-                                <img src="media/product/details/detail1.jpg" style="min-height: 84px;">
+                                <img src="<?php echo (productImageUrl($item)); ?>" style="min-height: 84px;">
                             </a>
                         </div>
                         <!--2-->
@@ -78,7 +78,7 @@
                                 </div>
                                 <div class="the-list">
                                     <div class="col-xs-4">
-                                        موجودی انبار
+                                         موجودی انبار
                                     </div>
                                     <div class="col-xs-8">
                                         <?php echo $item['product_stock']; ?>
@@ -87,48 +87,56 @@
                                 </div>
                                 <div class="the-list">
                                     <div class="col-xs-4">
-                                        جعبه انتخاب
+                                        برند
                                     </div>
                                     <div class="col-xs-8">
-                                        <select class="form-control">
-                                            <option value="red">انتخاب کنید</option>
-                                            <option value="red">انتخاب اول</option>
-                                            <option value="red">انتخاب دوم</option>
-                                            <option value="red">انتخاب سوم</option>
-                                            
-                                        </select>
+                                        <?php echo $item['product_brand']; ?>
                                     </div>
                                 </div>
                                 <div class="the-list">
                                     <div class="col-xs-4">
-                                        چک باکس
+                                        رنگ
                                     </div>
                                     <div class="col-xs-8">
-                                        <label>
-                                            <input type="checkbox" value="check" > انتخاب اول
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" value="check" > انتخاب دوم
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" value="check" checked> انتخاب سوم
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" value="check" > انتخاب چهارم
-                                        </label>
+                                        <?php echo $item['product_color']; ?>
                                     </div>
                                 </div>
                                 <div class="the-list">
                                     <div class="col-xs-4">
-                                       دکمه رادیویی
+                                        جنسیت
                                     </div>
                                     <div class="col-xs-8">
-                                        <label>
-                                            <input type="radio" value="radio" name="radio" > رادیویی 1
-                                        </label>
-                                        <label>
-                                            <input type="radio" value="radio" name="radio" > رادیویی 2
-                                        </label>
+                                        <?php 
+                                            if ($item['product_gender'] == 0) 
+                                                {echo 'زنانه';}
+                                            else 
+                                                {echo 'مردانه';}  
+                                        ?>
+                                    </div>
+                                </div>
+                                <div class="the-list">
+                                    <div class="col-xs-4">
+                                        جنس پارچه
+                                    </div>
+                                    <div class="col-xs-8">
+                                        <?php echo $item['product_cloth_type']; ?>
+                                    </div>
+                                </div>
+                                <div class="the-list">
+                                    <div class="col-xs-4">
+                                         کشور سازنده
+                                    </div>
+                                    <div class="col-xs-8">
+                                        <?php echo $item['product_made_in']; ?>
+                                    </div>
+                                </div>
+                                <div class="the-list">
+                                    <div class="col-xs-4">
+                                        تعداد بازدید
+                                    </div>
+                                    <div class="col-xs-8">
+                                        <?php echo $item['product_visit_count']; ?>
+                                        بازدید
                                     </div>
                                 </div>
                                 <div class="clearfix"></div>

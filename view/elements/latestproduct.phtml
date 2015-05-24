@@ -1,0 +1,47 @@
+<?php
+
+    foreach ($productBoxs as $productBox):
+        
+            
+
+?>
+<div class="col-lg-4 col-sm-4 hero-feature text-center">
+    <div class="thumbnail">
+        <a href="<?php echo productUrl($productBox['id']); ?>">
+            <img src="<?php echo (productImageUrl($productBox)); ?>">
+        </a>
+        <div class="caption prod-caption">
+            <h4>
+                <a href="<?php echo productUrl($productBox['id']); ?>"><?php echo ($productBox['product_name']); ?></a>
+            </h4>
+            <p><?php echo ($productBox['product_description']); ?></p>
+            
+                <div class="btn-group btn-group-justified">
+                    <a href="#" class="btn btn-default">
+                        <?php echo ($productBox['product_price']); ?>
+                        تومان</a>
+                    <a href="#" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                    خرید
+                    </a>
+                </div>
+            <p></p>
+        </div>
+    </div>
+</div>
+
+<?php
+    endforeach;
+
+
+
+
+
+
+
+
+
+
+
+
+
