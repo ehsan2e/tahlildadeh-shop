@@ -75,7 +75,7 @@ function handleProductPictureUpload(){
 
     if (!move_uploaded_file(
         $_FILES['picture']['tmp_name'],
-        implode(DS,array(WEBROOT,'media','products',$filenName))
+        implode(DS,array(WEBROOT,'media','images','products',$filenName))
     )) {
         addMessage('خطا در انتقال عکس به پوشه فایل', FAILURE);
         return false;

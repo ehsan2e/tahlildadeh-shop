@@ -1,7 +1,7 @@
 .settings/*
 .idea/*
 /cache/*
-/webroot/media/products/*
-!/webroot/media/products/empty
+/webroot/media/images/products/*
+!/webroot/media/images/products/empty
 .project
 /config.php
