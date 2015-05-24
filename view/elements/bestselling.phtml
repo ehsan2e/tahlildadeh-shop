@@ -1,0 +1,45 @@
+<?php
+    $bestSellNumber =0;  
+    foreach ($bestSells as $bestSell):
+        $bestSellNumber++;
+
+?>
+
+<div class="hero-feature <?php if ($bestSellNumber >= 2): echo 'hidden-sm'; endif; ?>">
+    <div class="thumbnail text-center">
+        <a href="<?php echo (productUrl($bestSell['id'])); ?>">
+            <img src="<?php echo(productImageUrl($bestSell)); ?>">
+        </a>
+        <div class="caption prod-caption">
+            <h4>
+                <a href="detail.html">
+                   <?php echo $bestSell['product_name']; ?>
+                </a>
+            </h4>
+            <p>
+                <?php echo $bestSell['product_description']; ?>
+            </p>
+            <div class="btn-group btn-group-justified">
+                <a href="#" class="btn btn-default">
+                    <?php echo $bestSell['product_price']; ?>
+                    تومان</a>
+                <a href="Javascript: (function(){location='<?php echo (addToCartUrl($bestSell)); ?>';})()" class="btn btn-primary">
+                    <span class="glyphicon glyphicon-shopping-cart"></span>
+                خرید
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?php
+    endforeach;
+?>
+
+
+
+
+
+
+
+

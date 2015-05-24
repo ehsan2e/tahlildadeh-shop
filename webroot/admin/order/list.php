@@ -8,8 +8,9 @@ function main ()
         $result = dbQuery($sql);
         
         while (($record = mysql_fetch_assoc($result)) !== false ){             // چون جدول رو ندارم همین دوتا رو میزارم
-            $resp['data']['orders'][] = array('id'  => $record['id'], 
-                                                'date'    => $record['date']
+            $resp['data']['orders'][] = array(
+                                                'id'  => $record['id'], 
+                                                'order_date'    => $record['order_date']
                                                );            
         }
         

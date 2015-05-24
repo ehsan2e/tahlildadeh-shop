@@ -1,0 +1,37 @@
+<div class="slider">
+    <div class="bx-wrapper" style="max-width: 100%; margin: 0 auto;">
+        <div class="bx-viewport" style="max-width: 100%;overflow: hidden; position: relative; height: 135px;">
+            <div class="bx-wrapper" style="max-width: 920px;">
+                <div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 126px;">
+                    <ul class="bxslider2" style="width: 3215%; position: absolute; -webkit-transition-duration: 0s; transition-duration: 0s; -webkit-transform: translate3d(-1240px, 0px, 0px);">
+                      
+                <?php 
+                    foreach ($sliderNumberTwo as $slide):
+                ?>
+                        <li style="float: left; list-style: none; position: relative; width: 300px; margin-right: 10px;" class="bx-clone">
+                            <a href="<?php echo(productUrl($slide['id'])); ?>"><img src="<?php echo (productImageUrl($slide)); ?>" style="height: 110px;" title="<?php echo($slide['product_name']); ?>"></a>
+
+                        </li>
+                <?php
+                    endforeach;
+                ?>
+
+
+                    </ul>
+                </div>
+                <!-- <div class="bx-controls bx-has-controls-direction">
+                    <div class="bx-controls-direction">
+                        <a class="bx-prev" href="">Prev</a>
+                        <a class="bx-next" href="">Next</a>
+                    </div>
+                </div> -->
+            </div>
+        </div> <!-- bx-viewport -->
+        <div class="bx-controls bx-has-controls-direction">
+            <!-- <div class="bx-controls-direction">
+                <a class="bx-prev">prev</a>
+                <a class="bx-next">next</a>
+            </div> -->
+        </div>
+    </div> <!-- bx-wrapper -->
+</div>

@@ -18,17 +18,17 @@
     <th>تاریخ</th>
   </tr>
   	
-		<?php foreach($customers as $customer): ?>
+    <?php foreach($orders as $order): ?>
         <!-- Order item -->
         <tr>
-    <td><a href="<?php echo(sprintf('/admin/customer/edit.php?p=%d',$customer['id']));?>"><?php echo ($customer['id']); ?></a></td> <!-- قسمت فرستادن آیدی به صفحه مورد نظز -->	
-    <td><?php echo ($customer['date']); ?></td>		
+    <td><a href="<?php echo(sprintf('/admin/customer/edit.php?p=%d',$order['id']));?>"><?php echo ($order['id']); ?></a></td> <!-- قسمت فرستادن آیدی به صفحه مورد نظز -->	
+    <td><?php echo ($order['order_date']); ?></td>		
   </tr>
                         
 		   
          <!-- End Order 1 -->
-        <?php endforeach; ?>
-		</table>
+    <?php endforeach; ?>
+        </table>
     </div>
 	
 </div>

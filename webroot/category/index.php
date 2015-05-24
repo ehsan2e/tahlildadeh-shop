@@ -31,6 +31,7 @@ function main ()
             $resp['data']['products'][] = array('product_name'  => $record['product_name'],
                                                 'product_price' => $record['product_price'],
                                                 'id'    => $record['id'],
+                                                'product_picture_name'    => $record['product_picture_name'],
                                                 'product_description'    => $record['product_description']
                                                );            
         }

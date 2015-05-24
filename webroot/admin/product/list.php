@@ -9,17 +9,17 @@ function main ()
         $resp['data']['category']=$category;
         $resp['data']['products'] = array();
         
-        $sql ="SELECT `products`.*,`categories`.`name` AS `cname` FROM `products` JOIN `categories` ON `products`.`category_id`=`categories`.`id`LIMIT 10;";
+        $sql ="SELECT `products`.*,`categories`.`category_name` AS `cname` FROM `products` JOIN `categories` ON `products`.`category_id`=`categories`.`id`LIMIT 10;";
         $result = dbQuery($sql);
         
         while (($record = mysql_fetch_assoc($result)) !== false ){            
-            $resp['data']['products'][] = array('name'  => $record['product_name'],
-                                                'price' => $record['product_price'],
+            $resp['data']['products'][] = array('product_name'  => $record['product_name'],
+                                                'product_price' => $record['product_price'],
                                                 'id'    => $record['id'],
-                                                'desc'    => $record['product_description'],
-												'category_id'    => $record['category_id'],
-												'cname'    => $record['cname'],
-												'stock'    => $record['product_stock']
+                                                'product_description'    => $record['product_description'],
+                                                'category_id'    => $record['category_id'],
+                                                'cname'    => $record['cname'],
+                                                'product_stock'    => $record['product_stock']
                                                );            
         }
         

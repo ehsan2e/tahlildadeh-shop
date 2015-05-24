@@ -1,0 +1,51 @@
+<?php 
+    $number = 0;
+    foreach ($randomProducts as $randomProduct):
+        
+?>
+
+<div class="col-lg-3 visible-lg">
+    <div class="row text-center">
+        <div class="col-lg-12 col-md-12">
+            <div class="thumbnail">
+                <a href="<?php echo (productUrl($randomProduct['id'])); ?>" style="overflow: hidden; ">
+                    <img src="<?php echo(productImageUrl($randomProduct)); ?>" style="height: 219px; max-width: none; max-height: none; ">
+                </a>
+                <div class="caption">
+                    <h4>
+                        <a href="<?php echo (productUrl($randomProduct['id'])); ?>">
+                            <?php echo ($randomProduct['product_name']); ?>
+                        </a>
+                    </h4>
+                    <p>
+                        <?php echo $randomProduct['product_description']; ?>
+                    </p>
+                    <p></p>
+
+                    <div class="btn-group btn-group-justified">
+                        <a class="btn btn-default">
+                            <?php echo $randomProduct['product_price']; ?>
+                            تومان</a>
+                        <a href="Javascript: (function(){location='<?php echo (addToCartUrl($randomProduct)); ?>';})()" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-shopping-cart"></span>
+                        خرید
+                        </a>
+                    </div>
+                    <p></p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?php
+
+    endforeach;
+
+
+
+
+
+
+

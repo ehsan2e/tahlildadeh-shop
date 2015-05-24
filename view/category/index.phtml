@@ -3,6 +3,12 @@
 <div class="row">
 	<!-- Right Menu -->
     <div class="col-lg-3 col-md-3 col-sm-12">
+        <div class="no-padding">
+            <span class="title">
+                پرفروش ترین محصولات
+            </span>
+        </div>
+            <?php echo(loadElement('bestselling')); ?>
     </div>
     <div class="clearfix visible-sm"></div>
 
@@ -19,7 +25,7 @@
         <div class="col-lg-4 col-sm-4 hero-feature text-center">
             <div class="thumbnail">
                 <a href="<?php echo productUrl($product['id']); ?>" >
-                    <img src="#" >
+                    <img src="<?php echo (productImageUrl($product)); ?>" >
                 </a>
                 <div class="caption prod-caption">
                     <h4>
@@ -29,7 +35,7 @@
                         <?php echo ($product['product_description']); ?>
                     </p>
                         <div class="btn-group btn-group-justified">
-                            <a href="#" class="btn btn-default"><?php echo ($product['product_price']); ?>&nbsp;ریال</a>
+                            <a class="btn btn-default"><?php echo ($product['product_price']); ?>&nbsp;ریال</a>
                             <a href="Javascript: (function(){location='<?php echo (addToCartUrl($product)); ?>';})()" class="btn btn-primary">
                                 <span class="glyphicon glyphicon-shopping-cart"></span>
                             خرید

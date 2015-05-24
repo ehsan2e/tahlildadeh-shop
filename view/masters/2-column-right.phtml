@@ -78,9 +78,11 @@
 		                <li>
 		                    <a href="/category">محصولات</a>
 		                </li>
+                        <?php	if(isset($_SESSION['cart']) && count($_SESSION['cart'])>0): ?>
 		                <li>
 		                    <a href="/cart">سبد خرید</a>
 		                </li>
+                        <?php endif; ?>
 		                <li>
 		                    <a href="#">سایر صفحات</a>
 		                </li>
