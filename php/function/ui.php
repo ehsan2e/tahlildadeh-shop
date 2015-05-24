@@ -52,3 +52,9 @@ function loadJS($path)
     $url=SKIN_URL.'js/'.$path;
     return $url;
 }
+
+function loadSkinImg($path)
+{
+    $url=SKIN_URL.'images/'.$path;
+    return $url;
+}

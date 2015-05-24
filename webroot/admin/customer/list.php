@@ -8,11 +8,12 @@ function main ()
         $result = dbQuery($sql);
         
         while (($record = mysql_fetch_assoc($result)) !== false ){             // داده ها دقیق نیست چون جدول مشتریان رو ندارم پس همینجوری میزنم تا تو کلاس دقیقش رو ببینم
-            $resp['data']['customers'][] = array('id'  => $record['id'],
+            $resp['data']['customers'][] = array(
+                                                'id'  => $record['id'],
                                                 'first_name' => $record['customer_name'],
                                                 'last_name' => $record['customer_family'],
                                                 'email'    => $record['customer_email'],
-                                                'address'    => $record['customer_address']
+                                                'mobile'    => $record['customer_mobile']
                                                );            
         }
         

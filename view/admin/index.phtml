@@ -1,3 +1,335 @@
+<div class="col-lg-3 col-md-3 col-sm-12">
+    <!-- Categories Menu -->
+    <div class="col-lg-12 col-md-12 col-sm-6">
+        <div class="no-padding">
+            <span class="title">
+               فهرست اصلی
+            </span>
+        </div>
+
+        <div class="panel-group panel-categories" id="accordion">
+            <div class="panel panel-default">
+                <div class="panel-heading have-sub">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="collapsed" aria-expanded="false">مدیریت محصولات</a>
+                    </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse" aria-expanded="true">
+                    <div class="list-group">
+                        <a href="products-list.html" class="list-group-item">  لیست محصولات</a>
+                        <a href="#" class="list-group-item"> لیست دسته بندی ها</a>
+                        <a href="add-product.html" class="list-group-item"> افزودن محصول جدید</a>
+                        <a href="#" class="list-group-item"> افزودن دسته بندی جدید</a>
+                    </div>
+                </div>
+                <div class="panel-heading have-sub">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" class="collapsed" aria-expanded="false">مدیریت مشتریان</a>
+                    </h4>
+                </div>
+                <div id="collapse2" class="panel-collapse collapse" aria-expanded="true">
+                    <div class="list-group">
+                        <a href="products-list.html" class="list-group-item">مشاهده لیست مشتریان</a>
+                        <a href="add-customer.html" class="list-group-item">افزودن مشتری جدید</a>
+                    </div>
+                </div>
+                <div class="panel-heading ">
+                    <h4 class="panel-title">
+                        <a href="#">یک منو کاربردی</a>
+                    </h4>
+                </div>
+                <div class="panel-heading ">
+                    <h4 class="panel-title">
+                        <a href="#">یک منو کاربردی</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Categories Menu -->
+    <!-- Best product -->
+    <div class="col-lg-12 col-md-12 col-sm-6">
+        <div class="no-padding">
+            <span class="title">
+                پرفروش ترین محصولات
+            </span>
+        </div>
+        <!-- Best product  -->
+            <?php echo(loadElement('bestselling')); ?>
+        <!-- Best product  -->
+
+    </div>
+    <!-- End Best product -->
+</div>
+        
+        
+        <div class="clearfix visible-sm"></div>
+        
+<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 product-detail-tab">
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs">
+        <li class="active" style="padding-right: 2px;"><a href="#stats" data-toggle="tab">آمار فروشگاه</a></li>
+            <li><a href="#lastsells" data-toggle="tab">آخرین فروش ها</a></li>
+            <li><a href="#newproducts" data-toggle="tab">جدیدترین محصولات</a></li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div class="tab-pane active" id="stats">
+                <div class="well">
+                    <p>
+                    بعد ها شاید در اینجا نموداری قرار بگیرد .....
+                    </p>
+                </div>
+        </div>
+        <div class="tab-pane" id="lastsells">
+            <div class="well"> <!-- Last sells -->
+
+            <table class="table table-bordered tbl-cart table-hover">
+                <thead>
+                    <tr class="text-center">
+                        <td class="tbl-cart-image hidden-xs">ردیف</td>
+                        <td>نام محصول</td>
+                        <td class="td-count">تعداد</td>
+                        <td class="td-qty">تاریخ</td>
+                        <td>فی</td>
+                        <td class="price-total">جمع</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="hidden-xs text-center">1</td>
+                        <td>
+                            <a href="../detail.html">
+                                 تیشرت خوبـــ   
+                            متن طولانی متن طولانی متن طولانی متن طولانی 
+                            </a>
+                        </td>
+
+                        <td class="text-center">
+                            155
+                        </td>
+                        <td class="text-center">
+                            94/02/01
+                        </td>
+                        <td class="price-single">100.000.000
+                            ريال
+                        </td>
+                        <td>
+                            20.000.000.000
+                            ريال
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="hidden-xs text-center">2</td>
+                        <td><a href="../detail.html">پیرهن خیلی ارزان</a>
+                        </td>
+                        <td class="text-center"> 3 </td>
+                        <td class="text-center">
+                            94/01/25
+                        </td>
+                        <td class="price-single">20.000
+                        ريال
+                        </td>
+                        <td>50.000.000
+                        ريال
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="hidden-xs text-center">3</td>
+                        <td><a href="../detail.html">پیرهن خیلی ارزان</a>
+                        </td>
+                        <td class="text-center"> 3 </td>
+                        <td class="text-center">
+                            94/01/25
+                        </td>
+                        <td class="price-single">20.000
+                        ريال
+                        </td>
+                        <td>50.000.000
+                        ريال
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="hidden-xs text-center">4</td>
+                        <td><a href="../detail.html">پیرهن خیلی ارزان</a>
+                        </td>
+                        <td class="text-center"> 3 </td>
+                        <td class="text-center">
+                            94/01/25
+                        </td>
+                        <td class="price-single">20.000
+                        ريال
+                        </td>
+                        <td>50.000.000
+                        ريال
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="hidden-xs text-center">5</td>
+                        <td><a href="../detail.html">پیرهن خیلی ارزان</a>
+                        </td>
+                        <td class="text-center"> 3 </td>
+                        <td class="text-center">
+                            94/01/25
+                        </td>
+                        <td class="price-single">20.000
+                        ريال
+                        </td>
+                        <td>50.000.000
+                        ريال
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="hidden-xs text-center">6</td>
+                        <td><a href="../detail.html">پیرهن خیلی ارزان</a>
+                        </td>
+                        <td class="text-center"> 3 </td>
+                        <td class="text-center">
+                            94/01/25
+                        </td>
+                        <td class="price-single">20.000
+                        ريال
+                        </td>
+                        <td>50.000.000
+                        ريال
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
 
 
+            </div> <!-- End Last sells -->
+        </div>
+        <div class="tab-pane" id="newproducts">
+            <div class="well">
 
+            <table class="table table-bordered tbl-cart table-hover">
+                <thead>
+                    <tr class="text-center">
+                        <td class="tbl-cart-image hidden-xs">ردیف</td>
+                        <td>نام محصول</td>
+                        <td class="">تعداد بازدید</td>
+                        <td class="td-qty">تاریخ</td>
+                        <td>فی</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="hidden-xs text-center">1</td>
+                        <td>
+                            <a href="../detail.html">
+                            شلوارک
+                            </a>
+                        </td>
+
+                        <td class="text-center">
+                            155
+                        </td>
+                        <td class="text-center">
+                            94/02/01
+                        </td>
+                        <td class="price-single">100.000.000
+                            ريال
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="hidden-xs text-center">2</td>
+                        <td>
+                            <a href="../detail.html">
+                            پیراهن 
+                            </a>
+                        </td>
+
+                        <td class="text-center">
+                            1
+                        </td>
+                        <td class="text-center">
+                            94/02/01
+                        </td>
+                        <td class="price-single">100.000.000
+                            ريال
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="hidden-xs text-center">3</td>
+                        <td>
+                            <a href="../detail.html">
+                            شلوار بچه گانه
+                            </a>
+                        </td>
+
+                        <td class="text-center">
+                            2
+                        </td>
+                        <td class="text-center">
+                            94/02/01
+                        </td>
+                        <td class="price-single">100.000.000
+                            ريال
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="hidden-xs text-center">4</td>
+                        <td>
+                            <a href="../detail.html">
+                            شلوار مردانه
+                            </a>
+                        </td>
+
+                        <td class="text-center">
+                            55
+                        </td>
+                        <td class="text-center">
+                            94/02/01
+                        </td>
+                        <td class="price-single">100.000.000
+                            ريال
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="hidden-xs text-center">5</td>
+                        <td>
+                            <a href="../detail.html">
+                                لباس خوب
+                            </a>
+                        </td>
+
+                        <td class="text-center">
+                            3
+                        </td>
+                        <td class="text-center">
+                            94/02/01
+                        </td>
+                        <td class="price-single">100.000.000
+                            ريال
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="hidden-xs text-center">6</td>
+                        <td>
+                            <a href="../detail.html">
+                                 تیشرت خوبـــ   
+                            متن طولانی متن طولانی متن طولانی متن طولانی 
+                            </a>
+                        </td>
+
+                        <td class="text-center">
+                            4
+                        </td>
+                        <td class="text-center">
+                            94/02/01
+                        </td>
+                        <td class="price-single">100.000.000
+                            ريال
+                        </td>
+                    </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+        </div>
+    </div>
+</div> <!-- col-xs-12 product-detail-tab -->

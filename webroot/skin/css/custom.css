@@ -95,9 +95,28 @@ p {margin: 0 0 10px 0;}
 .btn-group>.btn:last-child:not(:first-child), .btn-group>.dropdown-toggle:not(:first-child) {border-radius: 0;}
 .form-control { border-radius: 0; box-shadow: none; webkit-box-shadow: none;}
 
+
+
 /* Menu */
 
 .have-sub i {font-size: 10px; padding-top: 5px;}
+
+/* Navbar */
+.navbar li.nav-dropdown .caret{	border-top-color: #fff;	border-bottom-color: #fff;}
+.dropdown-menu { border-radius: 0; -webkit-box-shadow: none; box-shadow: none; }
+.navbar li.nav-dropdown ul li a {  font: 18px/24px 'Roya',tahoma !important; }
+
+@media (min-width: 768px) {
+	.navbar li.nav-dropdown ul li a{
+		font-family: Arial;
+		font-size: 15px;
+		color: #333!important;
+		text-transform: inherit;
+	}
+	.navbar li.nav-dropdown ul li a:hover{
+		background-color: #f1f1f1!important;
+	}
+}
 
 /* Cart */
 

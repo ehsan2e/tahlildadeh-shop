@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="fa">
+    <title></title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="<?php echo(loadCSS('admin.css')); ?>" >
+</head>
+<body>
+<header></header>
+<nav>
+    <ul>
+        <li>مشتریان
+            <ul>
+                <li><a href="/admin/customer/add.php">اضافه کردن</a></li>
+                <li><a href="/admin/customer/edit.php">ویرایش</a></li>
+                <li><a href="/admin/customer/list.php">نمایش</a></li>
+            </ul>
+        </li>
+        <li>سفارشات
+            <ul>
+                <li><a href="/admin/order/list.php">نمایش</a></li>
+            </ul>
+        </li>
+        <li>محصولات
+            <ul>
+                <li><a href="/admin/product/add.php">اضافه کردن</a></li>
+                <li><a href="/admin/product/edit.php">ویرایش</a></li>
+                <li><a href="/admin/product/list.php">نمایش</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+<div class="container"><?php
+    // show message
+    echo (loadElement('message'));
+
+    echo(isset($content)?$content:'');
+?></div>
+<footer></footer>
+<script type="text/javascript" src="<?php echo(loadJS('jquery-1.11.0.min.js')); ?>" ></script>
+<script type="text/javascript" src="<?php echo(loadJS('admin.js')); ?>" ></script>
+</body>
+</html>
