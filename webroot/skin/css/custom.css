@@ -96,6 +96,16 @@ p {margin: 0 0 10px 0;}
 .form-control { border-radius: 0; box-shadow: none; webkit-box-shadow: none;}
 
 
+/* Tooltip */
+
+.tooltip.bottom .tooltip-arrow {
+  top: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-bottom-color: #449d44; /* black */
+  border-width: 0 5px 5px;
+}
+.tooltip.bottom .tooltip-inner{background-color: #449d44; font: 14px tahoma; padding: 5px 10px 10px 10px;}
 
 /* Menu */
 

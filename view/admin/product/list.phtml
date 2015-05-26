@@ -1,40 +1,138 @@
 
-<div class="row">
-	<!-- Right Menu -->
-    <div class="col-lg-3 col-md-3 col-sm-12">
-    </div>
-    <div class="clearfix visible-sm"></div>
+<div class="col-lg-12 col-md-12 col-xs-12">
+    <span class="title icon-product-list">
+            لیست محصولات
 
-    <!-- Products -->
-    <div class="col-lg-9 col-md-9 col-sm-12">
-
-        <div class="col-lg-12 col-sm-12">
-            <span class="title">لیست محصولات</span>
-        </div>
-        <!-- Products Box -->
-        <table id="t01" border="10" style="width:100%">
-  <tr>
-    <th>ID</th>
-    <th>نام</th>		
-    <th>دسته بندی</th>
-    <th>موجودی</th>
-    <th>قیمت (ریال)</th>
-  </tr>
-  	
-		<?php foreach($products as $product): ?>
-        <!-- Product item -->
-        <tr>
-    <td><?php echo ($product['id']); ?></td>
-    <td><a href="<?php echo(sprintf('/admin/product/edit.php?p=%d&c=%d',$product['id'],$category));?>"><?php echo ($product['product_name']); ?></a></td><!-- لینک اشتباه است خانوم ؟ باید اول انجام بده که من لینک رو با کار ایشون هماهنگ کنم -->
-    <td><?php echo ($product['cname']); ?></td>		
-    <td><?php echo ($product['product_stock']); ?></td>		
-    <td><?php echo ($product['product_price']); ?></td>
-  </tr>
-                        
-		   
-         <!-- End Product 1 -->
-        <?php endforeach; ?>
-		</table>
-    </div>
-	
+        <button type="button" class="btn btn-primary pull-left collapsed" data-toggle="collapse" data-target="#search" aria-expanded="false">
+            جستجو پیشرفته
+        </button>
+            <div class="clearfix"></div>
+    </span>
 </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="col-lg-12 col-md-12">
+<div id="search" class="collapse open">
+
+        <div class="col-lg-12 col-md-12 col-sm-12"> <!-- Search Content -->
+            <table class="table table-bordered tbl-checkout">
+                <tbody>
+                    <tr>
+                        <td class="tbl-width-100">
+                            نام محصول
+                        </td>
+                        <td class="tbl-width-250">
+                            <input type="text" class="form-control">
+                        </td>
+                        <td class="tbl-width-100">
+                            نام برند
+                        </td>
+                        <td class="tbl-width-200">
+                            <select class="form-control">
+                                <option></option>
+                                <option>Addidas</option>
+                                <option>Nike</option>
+                                <option>Puma</option>
+                            </select>
+                        </td>
+                        <td>وضعیت</td>
+                        <td class="tbl-width-250">
+                            <label>
+                                <input type="radio" name="sellsable">
+                                قابل فروش  
+                            </label>
+                               
+                            <label>
+                                <input type="radio" name="sellsable">
+                               غیر  قابل فروش
+                            </label>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="tbl-width-150">
+                            متن در توضیحات
+                        </td>
+                        <td class="tbl-width-100">
+                            <input type="text" class="form-control">
+                        </td><td class="tbl-width-150">
+                            موجودی در انبار
+                        </td>
+                        <td class="tbl-width-100">
+                            <input type="text" class="form-control">
+                        </td>
+
+                        <td class="tbl-width-150">کشور سازنده</td>
+                        <td>
+                            <select class="form-control">
+                                <option></option>
+                                <option>Addidas</option>
+                                <option>Nike</option>
+                                <option>Puma</option>
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+            </table> 
+            <input type="submit" name="btnSearch" value="جستجو" class="btn btn-success pull-left">
+            <br><br>
+            
+        </div> <!-- Search Content -->      
+    </div>
+                
+                <table class="table table-bordered table-hover tbl-cart">
+                    <thead>
+                        <tr class="text-center">
+                            <td class="tbl-width-50">
+                                ردیف
+                            </td>
+                            <td class="tbl-product-list-name">
+                                نام محصول
+                            </td>
+                            <td class="tbl-width-50">
+                                موجودی
+                            </td>
+                            <td class="tbl-width-100">
+                                فروخته شده
+                            </td>
+                            <td class="tbl-width-100">
+                                قیمت (ریال)
+                            </td>
+                            <td class="tbl-width-100">
+                                تعداد بازدید
+                            </td>
+                            <td class="tbl-width-100">
+                                دستورات
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+  	
+<?php foreach($products as $product): ?>
+                        
+    <!-- Product item -->
+                        <tr>
+                            <td class="text-center">1</td>
+                            <td><a href="<?php echo(sprintf('/admin/product/edit.php?p=%d&c=%d',$product['id'],$category));?>"><?php echo ($product['product_name']); ?></a></td>
+                            <td class="text-center"><?php echo ($product['product_stock']); ?></td>
+                            <td class="text-center"><?php echo ($product['product_number_sold']); ?></td>
+                            <td class="text-center"><?php echo ($product['product_price']); ?></td>
+                            <td class="text-center"><?php echo ($product['product_visit_count']); ?></td>
+                            <td class="text-center">
+                                <img src="<?php echo(loadSkinImg('admin/edit.png')); ?>" data-toggle="tooltip" data-placement="bottom" title="ویرایش"/>
+                                <img src="<?php echo(loadSkinImg('admin/product_detail.png')); ?>" data-toggle="tooltip" data-placement="bottom" title="مشاهده محصول"/>
+                                <img src="<?php echo(loadSkinImg('admin/product_delete.png')); ?>" data-toggle="tooltip" data-placement="bottom" title="حذف محصول"/>
+                            </td>
+                        </tr>
+<?php endforeach; ?>
+    <!-- End Product 1 -->
+
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+ <!-- Row -->

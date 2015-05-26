@@ -89,13 +89,18 @@ function main ()
     $resp=array();
     if(isset($_POST['submit'])){
         $productData=array(
-            'category_id' => isset($_POST['product_category'])?((int) $_POST['product_category']):null,
             'product_name' => isset($_POST['product_name'])?$_POST['product_name']:null,
+            'category_id' => isset($_POST['product_category'])?((int) $_POST['product_category']):null,
+            'product_is_saleable' => isset($_POST['product_is_saleable'])?((int) $_POST['product_is_saleable']):null,
             'product_price' => isset($_POST['product_price'])?((int) $_POST['product_price']):null,
-            'weight' => isset($_POST['product_weight'])?((int) $_POST['product_weight']):null,
             'product_stock' => isset($_POST['product_stock'])?((int) $_POST['product_stock']):null,
-            'os' => isset($_POST['product_os'])?((int) $_POST['product_os']):null,
-            'made_in' => isset($_POST['product_made_in'])?((int) $_POST['product_made_in']):null,
+            'product_brand' => isset($_POST['product_brand'])?((int) ($_POST['product_brand'])):null,
+            'product_gender' => isset($_POST['product_gender'])?((int) $_POST['product_gender']):null,
+            'product_color' => isset($_POST['product_color'])?($_POST['product_color']):null,
+            'product_cloth_type' => isset($_POST['product_cloth_type'])?($_POST['product_cloth_type']):null,
+
+
+            'product_made_in' => isset($_POST['product_made_in'])?((int) $_POST['product_made_in']):null,
             'product_description' => isset($_POST['product_description'])?$_POST['product_description']:null,
         );
 
@@ -114,7 +119,7 @@ function main ()
 
         $pictureHandlingResult=handleProductPictureUpload();
         if(is_string($pictureHandlingResult)){
-            $productData['picture_name']=$pictureHandlingResult;
+            $productData['product_picture_name']=$pictureHandlingResult;
         }
         if($dataIsCorrect && ($pictureHandlingResult!==false) && create('products',$productData)){
             addMessage(sprintf('"%s" با موفقیت ایجاد شد',htmlentities($productData['product_name'],ENT_QUOTES, 'UTF-8')),SUCSESS);
@@ -127,25 +132,37 @@ function main ()
     $tempCategories=listRecords('categories');
     $categories=array();
     foreach($tempCategories as $category){
-        $categories[$category['id']]=$category['name'];
+        $categories[$category['id']]=$category['category_name'];
     }
+    
+    
     //TODO consider a table or config file for country
-    $countries=array(
-        1=>'ایران',
-        2=>'چین',
-        3=>'روسیه',
-        4=>'آمریکا'
-    );
+    $tempCountries = listRecords('countries');
+    $countries = array();
+    foreach ($tempCountries as $country) {
+        $countries[$country['id']] = $country['country_name'];
+    }
+
+    /*
+     * Load Brands
+     */
+    $tempBrands = listRecords('brands');
+    $brands = array();
+    foreach ($tempBrands as $brand) {
+        $brands[$brand['id']] = $brand['brand_name'];
+    }
+    
+    
     //TODO consider a table for OS
-    $oses=array(
-        1=>'Windows',
-        2=>'Android',
-        3=>'IOS',
-        4=>'Linux'
-    );
+//    $oses=array(
+//        1=>'Windows',
+//        2=>'Android',
+//        3=>'IOS',
+//        4=>'Linux'
+//    );
     $resp['data']=array(
         'categories' => $categories,
-        'oses' => $oses,
+        'brands' => $brands,
         'countries' => $countries,
         'productData'=>isset($productData)?$productData:array()
     );

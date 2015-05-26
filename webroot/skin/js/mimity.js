@@ -93,6 +93,18 @@ $('.slider1').bxSlider({
   
 })
 
+    // active Tooltip
+    $('[data-toggle="tooltip"]').tooltip();
+    
+    // $(":file").filestyle();
+    
+$('#uploadpic').filestyle({
+        input : false,
+        buttonName : 'btn-primary',
+        buttonText : 'ارسال تصویر'
+});
+    
+    
 //$(document).ready(function(){
 //  $('.slider4').bxSlider({
 //    slideWidth: 300,
