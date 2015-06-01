@@ -1,7 +1,35 @@
-<form method="post" action="" >
-    <label for="username">نام کاربری</label>
-    <input type="text" name="username" id="username">
-    <label for="password">کلمه عبور</label>
-    <input type="password" name="password" id="password">
-    <button type="submit" name="submit">ورود</button>
-</form>
+    <!-- Login main -->
+        <div class="center-block login-form">
+            <div class="panel panel-default">
+                <div class="panel-heading">فرم ورود</div>
+                <div class="panel-body">
+                    <form role="form">
+                        <div class="form-group">
+                            <div class="input-group login-input">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                <input type="text" class="form-control" placeholder="نام کاربری">
+                            </div>
+                            <br>
+                            <div class="input-group login-input">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                <input type="password" class="form-control" placeholder="رمز عبور">
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> مرا بخاطر بسپار
+                                </label>
+                            </div>
+                            <button type="submit" class="btn btn-sm btn-primary pull-left"> ورود</button>
+                            <br/>
+                            <hr>
+                            <a href="<?php echo BASE_URL.'signup'; ?>" class="btn btn-success btn-sm pull-left">عضویت</a>
+                            <a href="#" class="btn btn-warning btn-sm">بازیابی رمز عبور</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- End Login page -->
+    
+    </div> <!-- row -->
+    <!-- End Body -->

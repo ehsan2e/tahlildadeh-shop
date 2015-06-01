@@ -1,5 +1,9 @@
 <?php
         // Category Page
+
+    global $dependencies;
+    $dependencies=array('checkInput','authHelper');
+    
 /*
  * Sample Dependency decleration
  *

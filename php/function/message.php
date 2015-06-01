@@ -3,9 +3,9 @@
 global $systemMessage;
 $systemMessage = NULL;
 
-define('SUCSESS', 'sucsess');
-define('FAILURE', 'failure');
-define('NOTICE', 'notice');
+define('SUCSESS', 'success');
+define('FAILURE', 'danger');
+define('NOTICE', 'warning');
 define('INFO', 'info');
 
 

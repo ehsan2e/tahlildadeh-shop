@@ -1,5 +1,8 @@
 <?php
 
+    global $dependencies;
+    $dependencies=array('checkInput','authHelper');
+    
 function main()
 {
 //    // محصول تصادفی در صفحه اول - کنار اسلایدر
@@ -9,7 +12,6 @@ function main()
 //    //var_dump($myresult);
     
 
-    
     
 }
 

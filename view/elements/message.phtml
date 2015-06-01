@@ -1,13 +1,11 @@
 <?php if(count($messages)>0): ?>
     <?php foreach($messages as $type=>$messageColection): ?>
-        <div class="message-<?php echo($type); ?>">
-        <?php foreach($messageColection as $message): ?>
-            <div><?php echo($message); ?></div>
+    <div class="alert alert-<?php echo($type); ?> alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <!-- <strong>موفقیت</strong> -->
+          <?php foreach($messageColection as $message): ?>
+            <?php echo($message); ?>
         <?php endforeach; ?>
-        </div>
+    </div>
     <?php endforeach; ?>
-<?php endif; ?>
-
-
-
-
+<?php endif;

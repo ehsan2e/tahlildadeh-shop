@@ -3,7 +3,7 @@
 // checkuout Page Controler
 
 global $dependencies;
-$dependencies = array ('crud');
+$dependencies = array ('crud','checkInput','authHelper');
 
 //global $acl;
 //$acl = 'customer';
@@ -24,7 +24,7 @@ function main()
         return array('redirect' => $url);
      }   
     
-        
+
     dbQuery('START TRANSACTION;');
       $productIds =  array_keys($_SESSION['cart']);
       $temp = implode (',',$productIds);
@@ -72,7 +72,7 @@ function main()
               'stock_detail' => sprintf('کاهش %d واحد از موجودی. تغییر موجودی از %d به %d. بابت سفارش شماره:', $_SESSION['cart'][$id], $stock, $newStockValue),
               'stock_count' => $newStockValue
           );
-          $subtotal += (((int) $product['product_price']) * ((int) $_SESSION['cart'][$id]));
+          $subtotal += (((int) $product['product_price']) * ((int) $_SESSION['cart'][$id])); 
       }
       
       

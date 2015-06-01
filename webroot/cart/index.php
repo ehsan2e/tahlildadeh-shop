@@ -2,8 +2,13 @@
 
 // Cart Page Controler
 
+    global $dependencies;
+    $dependencies=array('checkInput','authHelper');
+    
+
 function main()
-    {
+{
+        if (hasPrivilege('customer')){
         //@ToDo اگر سبد خالی بود به صفحه اصلی ارسال شود
     
         $resp = array ('data' => array(1));
@@ -42,7 +47,14 @@ function main()
         
     
     
-
-    }
+    } // End Check customer Loged in
+    else {
+        addMessage('برای تسویه حساب وارد حساب کاربری خود شوید، چنانچه هنوز عضو نیستید ثبت نام کنید', NOTICE);
+        $url = BASE_URL.'signup';
+        return array('redirect'=>$url);
+        
+       }
+    
+}
 
 require(dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR.'Engine.php');

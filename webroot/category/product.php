@@ -1,5 +1,7 @@
 <?php
-
+    global $dependencies;
+    $dependencies=array('checkInput','authHelper');
+    
 function main (){
     /**
      * If ProductId not set or empty return to home page

@@ -1,0 +1,28 @@
+<div class="login-form header-logotype Slogan">
+    <?php
+    
+        if (hasPrivilege('customer')){
+            foreach ($userDetails as $userDetail): ?>
+            <a href="<?php echo (BASE_URL.'customer');?>">
+                <?php echo ('سلام، ' . $userDetail['customer_name']); ?>
+            </a> 
+            
+            
+            
+            <?php
+            endforeach;
+        } else {
+            ?>
+            
+    <a href="<?php echo (BASE_URL.'signup');?>">
+        ورود / ثبت نام
+    </a>
+    <?php
+        }
+        
+
+
+
+    ?>
+
+</div>

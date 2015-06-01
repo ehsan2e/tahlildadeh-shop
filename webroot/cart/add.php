@@ -41,10 +41,11 @@
             if($count > ((int) $product['product_stock'])){
 
                 // @TODo نمایش پیغام خطا
+                $_SESSION['cart'][$productId] = $count;
+                addMessage('تعداد درخواستی شما بیش از موجودی فروشگاه می باشد، از قسمت ارتباط با ما درخواست خود را ثبت نمایید.', FAILURE);
             }else {
                 $_SESSION['cart'][$productId] = $count;
-                // @ToDo ایجاد پیغام درست
-                addMessage('محصول به درستی به سبد وارد شد', SUCSESS);
+                addMessage('محصول به درستی به سبد اضافه شد.', SUCSESS);
             }
 
             $url = categoryUrl($categoryId);
@@ -72,26 +73,42 @@
             if(!isset($_SESSION['cart'])){
                 $_SESSION['cart'] = array();
             }
+            
+            // بررسی موجود بودن در انبار
+            //@ToDo بازبینی شود 
+            
+            if((int) $product['product_stock'] !== 0){
+                // موجودی کافی در انبار هست  به سبد خرید اضافه گردد
+                
+                if (!isset($_SESSION['cart'][$productId])){
+                    $count = 1;
 
-            if (!isset($_SESSION['cart'][$productId])){
+                }else {
 
-                $count = 1;
+                    $count = $_SESSION['cart'][$productId]+1;
 
-            }else {
+                }
+                if($count > ((int) $product['product_stock'])){
 
-                $count = $_SESSION['cart'][$productId]+1;
+                    // @TODo نمایش پیغام خطا
 
+                    $_SESSION['cart'][$productId] = $count;
+                    addMessage('تعداد درخواستی شما بیش از موجودی فروشگاه می باشد، از قسمت ارتباط با ما درخواست خود را ثبت نمایید.', FAILURE);
+
+                }else {
+                    $_SESSION['cart'][$productId] = $count;
+                    // @ToDo ایجاد پیغام درست
+
+                    $_SESSION['cart'][$productId] = $count;
+                    addMessage('محصول به درستی به سبد اضافه شد.', SUCSESS);
+                }
+
+                
+            }  else {
+            
+                addMessage('تعداد درخواستی شما بیش از موجودی فروشگاه می باشد، از قسمت ارتباط با ما درخواست خود را ثبت نمایید.', FAILURE);
             }
 
-            /////
-
-            if($count > ((int) $product['product_stock'])){
-
-                // @TODo نمایش پیغام خطا
-            }else {
-                $_SESSION['cart'][$productId] = $count;
-                // @ToDo ایجاد پیغام درست
-            }
 
             $url = productUrl($productId);
             return array('redirect' => $url); 

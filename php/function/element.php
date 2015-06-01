@@ -139,8 +139,31 @@ function elementCart($data=array()){
         
     }
     
-    
+    function elementCustomerMenu (){
+        
+    }
 
+    function elementLoginLogout () {
+
+        if(isset ($_SESSION[getSpKey()])){
+            if($_SESSION[getSpKey()]['customer']){
+                $userId = $_SESSION[getSpKey()]['customer'];
+                $sql = "SELECT `id`,`customer_name` FROM `customers` WHERE `id` = '$userId'";
+                $result = dbQuery($sql);
+                while (($row = mysql_fetch_array($result)) !== false){
+                    $userDetails[] = array(
+                                            'id' => $row['id'],
+                                            'customer_name' => $row['customer_name']
+                                            );
+                }
+                mysql_free_result($result);
+                return array('userDetails' => $userDetails);
+            }
+        }
+        
+    }
+    
+    
 function elementMessage ($data=array()) {
     
     $result = array ('messages' => readMessage());

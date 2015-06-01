@@ -1,0 +1,148 @@
+
+
+<form action="" method="post" enctype="multipart/form-data">
+        <div class="col-lg-9 col-md-9 col-sm-12">
+            <div class="col-lg-12 col-md-12 col-xs-12">
+                <span class="title icon-product-add">
+                    افزودن محصول جدید
+                </span>
+            </div>
+            <div class="col-lg-12 col-md-12">
+                <table class="table table-bordered tbl-checkout">
+                    <tbody>
+                        <tr>
+                            <td class="tbl-width-200">عنوان محصول</td>
+                            <td colspan="5">
+                                <input type="text" id="product_name" name="product_name" 
+                                value="<?php echo htmlentities(isset($productData['product_name'])?$productData['product_name']:'', ENT_QUOTES, 'UTF-8') ?>" class="form-control" />
+                               
+                            </td>
+                        </tr>
+                        <tr>
+                            <?php $categoryID=isset($productData['category_id'])?$productData['category_id']:'' ?>
+                            <td>دسته بندی</td>
+                            <td>
+                                <select class="form-control" name="product_category">
+                                    <option value="">لطفا دسته محصول را انتخاب نمایید</option>
+                                    <?php foreach($categories as $id => $name): ?>
+                                        <option value="<?php echo($id); ?>"<?php if($categoryID==$id): ?> selected="selected"<?php endif; ?>><?php echo($name); ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </td>
+                            <td>وضعیت</td>
+                            <td>
+                                <select class="form-control" name="product_is_saleable">
+                                    <option value="1">قابل فروش</option>
+                                    <option value="0">غیر قابل فروش</option>
+                                </select>
+                            </td>
+                            <td>قیمت</td>
+                            <td>
+                                <input type="text" id="product_price" name="product_price"
+               value="<?php echo htmlentities(isset($productData['product_price'])?$productData['product_price']:'', ENT_QUOTES, 'UTF-8') ?>" class="form-control"/>
+                           
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <br/>
+                            <span class="title">
+                                توضیحات محصول
+                            </span>
+                                <textarea id="product_description" name="product_description">
+                                    <?php echo htmlentities(isset($productData['product_description'])?$productData['product_description']:'', ENT_QUOTES, 'UTF-8') ?>
+                                </textarea>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-12">
+            <div class="col-lg-12 col-md-12 col-xs-12">
+                <span class="title">
+                    جزئیات محصول
+                </span>
+            </div>
+            <div class="col-lg-12 col-md-12 col-xs-12">
+                <table class="table table-hover table-bordered">
+                    <tbody>
+                        <tr>
+                            <td>تعداد</td>
+                            <td>
+                                <input type="text" id="product_stock" name="product_stock"
+               value="<?php echo htmlentities(isset($productData['product_stock'])?$productData['product_stock']:'', ENT_QUOTES, 'UTF-8') ?>" class="form-control" />
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <?php $brand=isset($productData['brands'])?$productData['brands']:'' ?>
+                            <td>
+                                نام برند
+                            </td>
+                            <td>
+                                <select class="form-control" name="product_brand">
+                                    <option value="">انتخاب نام برند</option>
+                                    <?php foreach($brands as $id => $name): ?>
+                                        <option value="<?php echo($id); ?>"<?php if($brand==$id): ?> selected="selected"<?php endif; ?>><?php echo($name); ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                جنسیت
+                            </td>
+                            <td>
+                                <select class="form-control" name="product_gender">
+                                    <option></option>
+                                    <option value="1">مردانه</option>
+                                    <option value="0">زنانه</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>رنگ</td>
+                            <td>
+                                <input type="text" name="product_color"
+            value="<?php echo htmlentities(isset($productData['product_color'])?$productData['product_color']:'', ENT_QUOTES, 'UTF-8') ?>" class="form-control" placeholder="سبز | آبی"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>جنس پارچه</td>
+                            <td>
+                                <input type="text" name="product_cloth_type"
+    value="<?php echo htmlentities(isset($productData['product_cloth_type'])?$productData['product_cloth_type']:'', ENT_QUOTES, 'UTF-8') ?>" class="form-control" placeholder="نخی | کتان"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <?php $made_in=isset($productData['made_in'])?$productData['made_in']:'' ?>
+                            <td>
+                                کشور سازنده
+                            </td>
+                            <td>
+                                <select class="form-control" name="product_made_in">
+                                    <option value="">لطفا کشور سازنده را انتخاب نمایید</option>
+                                    <?php foreach($countries as $id => $name): ?>
+                                        <option value="<?php echo($id); ?>"<?php if($made_in==$id): ?> selected="selected"<?php endif; ?>><?php echo($name); ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            
+                            <td>
+                                تصویر شاخص
+                            </td>
+                            <td>
+                                <input type="file" name="picture" id="uploadpic" class="form-control filestyle" data-input="false"  />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <button type="submit" name="submit" value="submit" class="btn btn-success form-control" >ثبت</button>
+                <br/><br/>
+            </div>
+        </div>
+</form>
